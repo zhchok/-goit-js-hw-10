@@ -1,0 +1,18 @@
+{{#each this}}
+	<h2>
+		<img src="{{flags.svg}}" alt="{{name}} flag" width="40" />
+		{{name}}
+	</h2>
+	<p>
+		Столиця: {{capital}}
+	</p>
+	<p>
+		Населення: {{population}}
+	</p>
+	<p>
+		Мова:
+		{{#each languages}}
+			{{name}}
+		{{/each}}
+	</p>
+{{/each}}
