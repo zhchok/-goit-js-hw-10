@@ -1,4 +1,5 @@
 import Notiflix from "notiflix";
+import { clearCountriesContainers } from "../index";
 
 class SearchCountriesApiService {
 	constructor() {
@@ -13,7 +14,10 @@ class SearchCountriesApiService {
 				if (res.status === 200) {
 					return res.json();
 				}
-				throw new Error(Notiflix.Notify.failure("Oops, there is no country with that name"));
+				throw new Error(
+					Notiflix.Notify.failure("Oops, there is no country with that name"),
+					clearCountriesContainers(),
+				);
 			})
 			.then(countries => {
 				return (this.countries = countries);
